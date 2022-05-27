@@ -1,0 +1,13 @@
+{
+
+    "local": {
+        "username": "root",
+        "password": "3l3f4nt3",
+        "database": "pytahadb",
+        "host": "localhost",
+        "dialect": "mysql",
+        "timezone": "America/Asuncion",
+        "key": ""
+
+    }
+}
