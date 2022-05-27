@@ -51,6 +51,25 @@ const getById = async(req, res) => {
     }
 
 }
+
+const logout = async(req, res) => {
+    try {
+        let usuario = req.body;
+        console.log(usuario)
+        let result = await service.logout(usuario);
+        res.status(200).send({
+            success: true,
+            result
+        });
+    } catch (error) {
+        res.status(400).send({
+            success: false,
+            result: error.message
+        });
+    }
+
+}
+
 const update = async(req, res) => {
     try {
         let usuario = req.body;
@@ -100,6 +119,23 @@ const add = async(req, res) => {
 
 }
 
+const login = async(req, res) => {
+    try {
+        let persona = req.body;
+        let result = await service.login(persona);
+        res.status(200).send({
+            success: true,
+            result
+        });
+    } catch (error) {
+        res.status(400).send({
+            success: false,
+            result: error.message
+        });
+    }
+
+}
+
 
 module.exports = {
     getFilter,
@@ -107,5 +143,7 @@ module.exports = {
     add,
     remove,
     update,
-    getAll
+    getAll,
+    login,
+    logout
 };

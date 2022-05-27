@@ -1,5 +1,5 @@
 const service = require("../../services/alquiler.service")
-
+const jwt = require("../../helpes/jwt");
 
 const getAll = async(req, res) => {
     try {
